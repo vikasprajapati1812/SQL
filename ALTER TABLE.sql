@@ -1,0 +1,49 @@
+USE EmpDB
+
+-- ALTER TABLE
+
+SELECT * FROM Employee1
+
+ALTER TABLE Employee1
+ADD DOB DATE NOT NULL  -- NOT NULL IS NOT ALLOWED. So, please execute the below statement
+
+ALTER TABLE Employee1
+ADD DOB DATE			-- NULL VALUE COLUMN
+
+ALTER TABLE Employee1	-- COLUMN IS DROPPED
+DROP COLUMN DOB
+ 
+ALTER TABLE Employee1
+ADD CURRENCY VARCHAR(4) NOT NULL DEFAULT('INR') -- NOT NULL COLUMN WITH DEFAULT Value is allowed
+
+DROP TABLE Employee2
+
+CREATE TABLE Employee2
+(
+ID		INT PRIMARY KEY,				-- while defining a Column we can provide primary key
+EMP_ID	INT	FOREIGN KEY REFERENCES Employee(ID),
+DEP_ID	INT FOREIGN KEY REFERENCES Department(ID)
+)
+
+
+SELECT	*
+FROM	Employee
+
+INSERT INTO Employee2
+VALUES(1,10001)
+
+SELECT *
+FROM	##Employee
+
+
+CREATE TABLE Employee2
+(
+ID		INT,
+COL1	CHAR(10)
+
+PRIMARY KEY(ID)
+)
+
+
+ALTER TABLE Employee1
+ADD PRIMARY KEY(ID)
